@@ -1,0 +1,43 @@
+  /* Botón fijo en la parte derecha */
+  .boton-musica {
+    position: fixed;
+    bottom: 700px; /* Posición del botón */
+    right: 20px;
+    bottom: 20px;
+    background-color: #333030c3; /* Fondo gris claro */
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000; /* Asegura que esté encima de otros elementos */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .boton-musica:hover {
+    transform: scale(1.1); /* Agranda ligeramente al pasar el cursor */
+    background-color: #e0e0e0;
+  }
+  
+  .icono-musica {
+    width: 30px;
+    height: 30px;
+  }
+  
+  
+  @media screen and (max-width: 800px) {
+    .boton-musica {
+        bottom: 500px;
+        }
+    
+  }
+  
+  @media screen and (max-width: 500px) {
+    .boton-musica {
+      bottom: 700px;
+      }
+  }
+  

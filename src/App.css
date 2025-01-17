@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Variables de colores */
+:root {
+  --rojo: #b11226;
+  --rosa-palo: #f4d5d3;
+  --beige: #f8f1e5;
+  --marron-oscuro: #2e1b0f;
+  --gris-oscuro: #212121;
+  --vino: #7d0201;
+  --blanco: white;
+}
+
+/* Estilos globales */
+body {
+  margin: 0;
+  margin-top: 0%;
+  background-color: var(--gris-oscuro);
+  color: var(--marron-oscuro);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  align-items: center;
+}
+
+button:hover {
+  background-color: var(--rosa-palo);
+  color: var(--marron-oscuro);
+}
+
+/* Secciones generales */
+.container {
+  padding: 20px;
+  margin: auto;
+  max-width: 1200px;
+  text-align: center;
+}
+
+footer {
+  font-family: "Playlist-Script", serif;
+  background: var(--marron-oscuro);
+  color: var(--beige);
+  padding: 20px;
+  text-align: center;
+  font-family: 'Almendra Display', serif;
+  border-top: 5px solid var(--rojo);
+}
+
+/* Animación de deslizamiento desde abajo */
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(50px); /* Inicia más abajo */
+    opacity: 0; /* Totalmente transparente */
+  }
+  100% {
+    transform: translateY(0); /* Llega a su posición final */
+    opacity: 1; /* Totalmente visible */
+  }
+}
+
+/* Animación para el título principal */
+.titulo-principal {
+  font-family: "Playlist-Script", serif;
+  font-size: 100px;
+  color: var(--blanco);
+  text-shadow: 3px 3px 7px var(--rojo);
+  margin-bottom: -10px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  opacity: 0; /* Inicialmente oculto */
+  animation: slideInFromBottom 1s ease-out forwards; /* Animación */
+  animation-delay: 0.2s; /* Espera 0.2s para iniciar */
+}
+
+/* Animación para el título "Arantza" */
+.titulo-arantza {
+  font-family: "LobsterTwo", serif;
+  font-size: 200px;
+  color: var(--blanco);
+  text-shadow: 3px 3px 7px var(--rojo);
+  margin-bottom: 0;
+  margin-top: -20px;
+  position: relative;
+  display: block;
+  text-align: center;
+  opacity: 0; /* Inicialmente oculto */
+  animation: slideInFromBottom 1s ease-out forwards; /* Animación */
+  animation-delay: 0.4s; /* Espera 0.4s para iniciar */
+}
+
+
+/* Responsividad */
+@media screen and (max-width: 800px) {
+  body {
+    font-size: 90%;
+  }
+
+  .container {
+    padding: 10px;
+  }
+  
+  button {
+    font-size: 0.9em;
+    padding: 8px 12px;
+  }
+
+  #inicio h2 {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+  }
+
+  #inicio .temporizador {
+    font-size: 1.5rem;
+    margin-top: 10px;
+  }
+  .titulo-arantza {
+    font-size: 10rem; /* Tamaño para pantallas medianas */
+  }
+  .titulo-principal{
+    font-size: 5rem;
+    align-items: center;
+  }
+  
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    font-size: 85%;
+  }
+
+  h2, h3 {
+    font-size: 1.5em;
+    align-items: center;
+  }
+
+  
+  .titulo-principal{
+    font-size: 1rem;
+    align-items: center;
+  }
+
+  button {
+    font-size: 0.8em;
+    padding: 6px 10px;
+  }
+  .titulo-arantza {
+    font-size: 7rem; /* Tamaño para pantallas pequeñas */
+  }
+  .titulo-principal{
+    font-size: 3rem;
+    align-items: center;
+  }
+
+  #inicio h2 {
+    font-size: 1.6rem;
+  }
+
+  #inicio .temporizador {
+    font-size: 1.2rem;
+  }
+}

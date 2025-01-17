@@ -1,0 +1,169 @@
+/* Seccion de  Presentacion */
+#grax{
+    background-image: url(../assets/Presentacion.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Alinea elementos en columna */
+    text-align: center;
+    color: var(--marron-oscuro);
+    position: relative;
+    padding: 20px; /* Asegura espacio en dispositivos pequeños */
+}
+
+.gracias {
+    background-image: url(../assets/mancha.png);
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+    width: 80%; /* Ajusta el ancho del fondo */
+    max-width: 800px; /* Máximo tamaño del ancho */
+    height: auto; /* Ajusta la altura automáticamente */
+    padding: 40px; /* Espacio interno alrededor del texto */
+    text-align: center; /* Centra el texto */
+    position: relative;
+    z-index: 1; /* Asegura que el fondo esté detrás del texto */
+}
+
+.agradecimiento{
+    font-family: "DrukaatieBurti",serif;
+    font-size: 3rem; /* Tamaño grande */
+    color: var(--blanco);
+    text-shadow: 3px 3px 7px black;
+}
+
+.titulo-padrinos {
+    font-family: "DrukaatieBurti",serif;
+    font-size: 3rem; /* Tamaño grande */
+    color: var(--blanco);
+    text-align: center;
+    margin-bottom: 10px; /* Espacio inferior */
+    margin-top: 10px;
+    text-shadow: 3px 3px 7px black;
+}
+
+.padrino {
+    font-family: "DrukaatieBurti",serif;
+    font-size: 3rem; /* Tamaño grande */
+    color: var(--blanco);
+    text-align: center;
+    margin-bottom: 10px; /* Espacio inferior */
+    text-shadow: 3px 3px 7px black;
+}
+
+.ye {
+    font-family: "DrukaatieBurti",serif;
+    font-size: 3rem; /* Tamaño grande */
+    color: var(--blanco);
+    text-align: center;
+    margin-bottom: 10px; /* Espacio inferior */
+    text-shadow: 3px 3px 7px black;
+}
+
+.madrina {
+    font-family: "DrukaatieBurti",serif;
+    font-size: 3rem; /* Tamaño grande */
+    color: var(--blanco);
+    text-align: center;
+    margin-bottom: 10px; /* Espacio inferior */
+    text-shadow: 3px 3px 7px black;
+}
+
+/* Animación de deslizamiento desde arriba */
+@keyframes slideInFromTop {
+    0% {
+      transform: translateY(-50px); /* Inicia más arriba */
+      opacity: 0; /* Totalmente transparente */
+    }
+    100% {
+      transform: translateY(0); /* Llega a su posición final */
+      opacity: 1; /* Totalmente visible */
+    }
+  }
+  
+  /* Animación aplicada a los elementos de texto */
+  .agradecimiento,
+  .titulo-padrinos,
+  .padrino,
+  .ye,
+  .madrina {
+    opacity: 0; /* Inicialmente oculto */
+    animation: slideInFromTop 2s ease-out forwards; /* Duración más larga */
+  }
+  
+  /* Retrasos para que los elementos aparezcan de forma escalonada */
+  .agradecimiento:nth-child(1) {
+    animation-delay: 0.4s; /* Retraso inicial */
+  }
+  .agradecimiento:nth-child(2) {
+    animation-delay: 0.8s;
+  }
+  .agradecimiento:nth-child(3) {
+    animation-delay: 1.2s;
+  }
+  .titulo-padrinos {
+    animation-delay: 1.6s;
+  }
+  .padrino {
+    animation-delay: 2s;
+  }
+  .ye {
+    animation-delay: 2.4s;
+  }
+  .madrina {
+    animation-delay: 2.8s;
+  }
+  
+
+@media screen and (max-width: 800px) {
+    .agradecimiento{
+        font-size: 1.5rem; 
+        
+    }
+
+    .titulo-padrinos {
+        font-size: 1.5rem; 
+    }
+    
+    .padrino {
+        font-size: 1.5rem; 
+    }
+    
+    .ye {
+        font-size: 1.5rem; 
+    }
+    
+    .madrina {
+        font-size: 1.5rem; 
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .gracias {
+        width: 100%;
+        padding: 0;
+    }
+    .agradecimiento{
+        font-size: 1.rem; 
+        
+    }
+
+    .titulo-padrinos {
+        font-size: 1.5rem; 
+    }
+    
+    .padrino {
+        font-size: 1.5rem; 
+    }
+    
+    .ye {
+        font-size: 1.5rem; 
+    }
+    
+    .madrina {
+        font-size: 1.5rem; 
+    }
+}

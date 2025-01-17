@@ -1,0 +1,125 @@
+@font-face {
+  font-family: 'LobsterTwo';
+  src: url("./fonts/LobsterTwo/LobsterTwo.woff2") format('woff2'),
+       url("./fonts/LobsterTwo/LobsterTwo.woff") format('woff'),
+       url("./fonts/LobsterTwo/LobsterTwo-Regular.ttf") format('truetype');
+  font-display: swap;
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Playlist-Script';
+  src: url("./fonts/Playlist-Script/Playlist-Script.woff2") format('woff2'),
+       url("./fonts/Playlist-Script/Playlist-Script.woff") format('woff'),
+       url("./fonts/Playlist-Script/Playlist-Script.ttf") format('truetype');
+  font-display: swap;
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'BeautySleep';
+  src: url("./fonts/BeautySleep/BeautySleepDemoRegular.woff2") format('woff2'),
+       url("./fonts/BeautySleep/BeautySleepDemoRegular.woff") format('woff'),
+       url("./fonts/BeautySleep/BeautySleepDemoRegular.ttf") format('truetype');
+  font-display: swap;
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Sinera';
+  src: url("./fonts/Sinera/Sinera.woff2") format('woff2'),
+       url("./fonts/Sinera/Sinera.woff") format('woff'),
+       url("./fonts/Sinera/Sinera.ttf") format('truetype');
+  font-display: swap;
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Celina Diary';
+  src: url("./fonts/Celina/CelinaDiaryPersonalUse.woff2 ") format('woff2'),
+       url("./fonts/Celina/CelinaDiaryPersonalUse.woff") format('woff'),
+       url("./fonts/Celina/CelinaDiaryPersonalUse.ttf") format('truetype');
+  font-display: swap;
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DrukaatieBurti';
+  src: url("./fonts/DrukaatieBurti/DrukaatieBurti-Demi.woff2") format('woff2'),
+       url("./fonts/DrukaatieBurti/DrukaatieBurti-Demi.woff") format('woff'),
+       url("./fonts/DrukaatieBurti/DrukaatieBurti-Demi.ttf") format('truetype');
+  font-display: swap;
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import 'aos/dist/aos.css';
+
+/* Reset Básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Tipografía y fuentes globales */
+body {
+  background-color: var(--negro-tim-burton);
+  color: var(--rojo);
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+/* Colores globales */
+:root {
+  --rojo: #b11226;
+  --rosa-palo: #f4d5d3;
+  --beige: #f8f1e5;
+  --negro-tim-burton: #2e2b2b;
+  --gris: #616060;
+}
+
+/* Links
+a {
+  text-decoration: none;
+  color: var(--rojo);
+}
+
+a:hover {
+  color: var(--rosa-palo);
+  text-decoration: underline;
+} */
+
+/* Botones */
+/* button {
+  background-color: var(--rojo);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--rosa-palo);
+} */
+
+/* Imagenes */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}

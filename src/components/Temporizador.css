@@ -1,0 +1,202 @@
+/* Contenedor principal del temporizador */
+.temporizador-container {
+  background: linear-gradient(45deg, #1b1b1b, #2e2b2b);
+  color: var(--beige);
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+  text-align: center;
+  margin: 20px auto;
+  max-width: 800px;
+}
+  
+  /* Título */
+  .temporizador-titulo {
+    font-family: "DrukaatieBurti", serif;
+    font-size: 4rem;
+    color: var(--rojo);
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Caja del temporizador */
+  .temporizador-caja {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  /* Elementos individuales */
+  .temporizador-elemento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #2e2b2b;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid var(--rojo);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Número */
+  .temporizador-numero {
+    font-family: "Debby", serif;
+    font-size: 4rem;
+    color: var(--beige);
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    animation: bounce 1s infinite;
+  }
+  
+  /* Separador */
+  .temporizador-separador {
+    font-family: "Debby", serif;
+    font-size: 3rem;
+    color: var(--rosa-palo);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    animation: fade-in-out 1s infinite;
+  }
+  
+  /* Etiqueta */
+  .temporizador-label {
+    font-family: "Cinzel Decorative", serif;
+    font-size: 2rem;
+    color: var(--rosa-palo);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  }
+  
+  /* Animación de rebote */
+  /* @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  } */
+  /* Animacion de girp */
+  /* @keyframes flip {
+    0% {
+      transform: rotateY(0deg);
+    }
+    50% {
+      transform: rotateY(90deg);
+    }
+    100% {
+      transform: rotateY(0deg);
+    }
+  }
+  
+  .temporizador-numero {
+    animation: flip 1s infinite;
+  } */
+  
+  /* Animación para el separador
+  Animacion de latir
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }
+  
+  .temporizador-numero {
+    animation: pulse 1s infinite;
+  } */
+
+  /*Animacion de brillo 
+  @keyframes glow {
+    0%, 100% {
+      text-shadow: 0 0 5px var(--rosa-palo), 0 0 10px var(--rosa-palo), 0 0 15px var(--rojo);
+    }
+    50% {
+      text-shadow: 0 0 10px var(--rosa-palo), 0 0 20px var(--rojo), 0 0 30px var(--rojo);
+    }
+  }
+  
+  .temporizador-numero {
+    animation: glow 1.5s infinite;
+  } */
+
+/*   Animacion de desvanecen
+  @keyframes fade {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+  
+  .temporizador-numero {
+    animation: fade 1.5s infinite;
+  } */
+  
+/* Animacion de cambio de color */
+  @keyframes colorShift {
+    0% {
+      color: var(--rojo);
+    }
+    50% {
+      color: var(--rosa-palo);
+    }
+    100% {
+      color: var(--rojo);
+    }
+  }
+  
+  .temporizador-numero {
+    animation: colorShift 2s infinite;
+  }
+  
+  /* Animación al reducir la pantalla */
+  @media screen and (max-width: 800px) {
+    .temporizador-numero {
+      font-size: 4rem;
+    }
+  
+    .temporizador-label {
+      font-size: 1.8rem;
+    }
+  
+    .temporizador-separador {
+      font-size: 2rem;
+    }
+  
+    .temporizador-titulo {
+      font-size: 3rem;
+    }
+  }
+  
+  @media screen and (max-width: 500px) {
+    .temporizador-numero {
+      font-size: 1.4rem;
+      margin-bottom: 0px;
+    }
+
+    .temporizador-titulo{
+      font-size: 1.8rem;
+    }
+  
+    .temporizador-label {
+      font-size: 0.8rem;
+    }
+  
+    .temporizador-separador {
+      font-size: 1.5rem;
+    }
+  
+    .temporizador-caja {
+      gap: 1px;
+    }
+    .temporizador-elemento{
+      padding: 18px;
+    }
+  }
+  

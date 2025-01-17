@@ -1,0 +1,113 @@
+/* Contenedor principal del itinerario */
+.itinerario-container {
+    background-color: #616060;
+    border: 3px solid var(--rojo);
+    border-radius: 15px;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Título del itinerario */
+.itinerario-titulo {
+    font-family: "Harry P", serif;
+    font-size: 2.5rem;
+    color: var(--rojo);
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra más oscura para destacar */
+}
+
+/* Lista de actividades */
+.itinerario-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Cada actividad */
+.itinerario-item {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #aaa, #717171); /* Fondo con degradado */
+    border: 2px solid var(--rojo);
+    border-radius: 15px;
+    padding: 15px 20px;
+    font-family: "Cinzel Decorative", serif;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s; /* Animación al pasar el mouse */
+}
+
+/* Cambia el diseño al pasar el mouse */
+.itinerario-item:hover {
+    transform: scale(1.05); /* Agranda ligeramente */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Sombra más intensa */
+}
+
+/* Icono de actividad */
+.itinerario-icono {
+    font-size: 1.8rem;
+    margin-right: 15px;
+    color: var(--rojo);
+    display: flex;
+    align-items: center;
+}
+
+/* Hora */
+.hora {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--marron-oscuro); /* Color más brillante para contraste */
+    margin-right: 10px;
+}
+
+/* Actividad */
+.actividad {
+    font-size: 1.2rem;
+    color: var(--marron-oscuro);
+    flex: 1;
+}
+/* Personaliza la animación al aparecer */
+.aos-init {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  
+  .aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Opcional: Mejora la transición de los elementos */
+  .itinerario-item {
+    transition: transform 0.6s ease, opacity 0.6s ease;
+  }
+  
+
+/* Responsividad */
+@media screen and (max-width: 800px) {
+    .itinerario-titulo {
+        font-size: 2rem;
+    }
+
+    .hora, .actividad {
+        font-size: 1rem;
+    }
+    .itinerario-item {
+        padding: 10px 15px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .itinerario-titulo {
+        font-size: 2.5rem;
+    }
+
+    .hora, .actividad {
+        font-size: 0.9rem;
+    }
+    .itinerario-item {
+        padding: 8px 10px;
+    }
+}

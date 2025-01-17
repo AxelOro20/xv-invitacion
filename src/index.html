@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Ticket</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: #f4e242;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #3a2a0e;
+        }
+
+        .ticket {
+            background: linear-gradient(135deg, #d4af37, #f4e242, #d4af37);
+            color: #000;
+            width: 90%;
+            max-width: 700px;
+            border: 3px solid black;
+            padding: 20px;
+            text-align: center;
+            font-family: 'Georgia', serif;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            clip-path: polygon(6% 0, 94% 0, 100% 6%, 100% 94%, 94% 100%, 6% 100%, 0 94%, 0 6%);
+        }
+
+        .ticket h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 0;
+            text-transform: uppercase;
+            font-family: 'Arial Black', sans-serif;
+        }
+
+        .ticket .logo {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .details {
+            margin: 10px 0;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .details div {
+            text-align: center;
+        }
+
+        .details strong {
+            display: block;
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .line {
+            border-top: 2px solid black;
+            margin: 15px 0;
+        }
+
+        .footer {
+            font-size: 0.9rem;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .zigzag {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            clip-path: polygon(
+                0 10px,
+                10px 0,
+                calc(100% - 10px) 0,
+                100% 10px,
+                100% calc(100% - 10px),
+                calc(100% - 10px) 100%,
+                10px 100%,
+                0 calc(100% - 10px)
+            );
+        }
+    </style>
+</head>
+<body>
+    <div class="ticket">
+        <div class="logo">Wonka</div>
+        <h1>Golden Ticket</h1>
+        <div class="line"></div>
+        <div class="details">
+            <div>
+                <strong>Date</strong>
+                Feb. 1
+            </div>
+            <div>
+                <strong>Time</strong>
+                10 A.M. (Sharp!)
+            </div>
+            <div>
+                <strong>Place</strong>
+                Front Gates
+            </div>
+        </div>
+        <div class="line"></div>
+        <p class="footer">THIS GOLDEN TICKET ENSURES ADMITTANCE.</p>
+    </div>
+</body>
+</html>

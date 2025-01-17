@@ -1,0 +1,207 @@
+/* Contenedor principal */
+.formulario-container {
+  background: linear-gradient(45deg, #1b1b1b, #2e2b2b);
+  color: var(--beige);
+  padding: 40px 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+  text-align: center;
+}
+
+.Title{
+  font-family: "LobsterTwo", serif;
+  font-size: 2.5rem;
+  color: var(--rojo);
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+.favor{
+  font-family: "DrukaatieBurti", serif;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+/* Título */
+.formulario-titulo {
+  font-family: "LobsterTwo", serif;
+  font-size: 2.5rem;
+  color: var(--rojo);
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+/* Formulario */
+.formulario-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Campo del formulario */
+.formulario-campo {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.formulario-campo label {
+  font-family: "DrukaatieBurti", serif;
+  font-size: 1.2rem;
+  color: var(--beige);
+  margin-bottom: 5px;
+  display: block;
+}
+
+.formulario-campo input,
+.formulario-campo textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid var(--rojo);
+  border-radius: 5px;
+  background-color: #2e2b2b;
+  color: var(--beige);
+  font-family: "DrukaatieBurti-Demi", serif;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+  resize: none;
+}
+
+.formulario-campo textarea {
+  height: 80px;
+}
+
+.formulario-campo input:focus,
+.formulario-campo textarea:focus {
+  border-color: var(--rosa-palo);
+}
+
+/* Grupo de opciones de asistencia */
+.formulario-radio-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.formulario-radio-group label {
+  font-family: "LobsterTwo", serif;
+  font-size: 1.2rem;
+  color: var(--beige);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.formulario-radio-group input[type="radio"] {
+  accent-color: var(--rojo);
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* Botón */
+.formulario-boton {
+  background-color: var(--rojo);
+  color: var(--beige);
+  font-family: "DrukaatieBurti-Demi", serif;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  align-self: center;
+  margin-top: 10px;
+}
+
+.formulario-boton:hover {
+  background-color: var(--rosa-palo);
+  color: var(--marron-oscuro);
+  transform: scale(1.05);
+}
+
+/* Error */
+.formulario-error {
+  color: var(--rojo);
+  font-family: "DrukaatieBurti-Demi", serif;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+/* Sección de contacto */
+.contacto {
+  background: linear-gradient(45deg, #1b1b1b, #2e2b2b);
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 10px;
+  font-family: "DrukaatieBurti-Demi", serif;
+  margin-top: 10px;
+}
+
+/* Título */
+.titulo-contacto {
+  font-family: "DrukaatieBurti", cursive; /* Fuente decorativa */
+  font-size: 2.5rem;
+  color: red; /* Color oscuro */
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Mensaje descriptivo */
+.mensaje-contacto {
+  font-family: "DrukaatieBurti", sans-serif;
+  font-size: 1.5rem;
+  color: white; /* Color gris */
+  margin-bottom: 30px;
+}
+
+/* Botón de WhatsApp */
+.boton-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #128c7e; /* Color verde de WhatsApp */
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 15px 30px;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+}
+
+.boton-whatsapp:hover {
+  background-color: #0a6655; /* Cambia a un verde más oscuro al pasar el mouse */
+}
+
+.icono-whatsapp {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+
+/* Responsividad */
+@media screen and (max-width: 800px) {
+  .formulario-titulo {
+    font-size: 2rem;
+  }
+
+  .formulario-boton {
+    font-size: 1rem;
+    padding: 8px 15px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .formulario-titulo {
+    font-size: 1.5rem;
+  }
+
+  .formulario-boton {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+}

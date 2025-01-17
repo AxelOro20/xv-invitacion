@@ -1,0 +1,193 @@
+/* Sección de inicio */
+#inicio {
+    background-image: url(../assets/inicio.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Alinea elementos en columna */
+    text-align: center;
+    color: var(--marron-oscuro);
+    position: relative;
+    padding: 20px; /* Asegura espacio en dispositivos pequeños */
+  }
+  
+  #inicio h1, #inicio h2, #inicio .temporizador {
+    position: relative;
+    z-index: 2; /* Asegura que el texto esté sobre la imagen */
+  }
+  
+  #inicio::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(255, 255, 255, 0.2); Capa gris translúcida */
+    z-index: 1; /* Capa detrás del texto */
+  }
+  
+  .titulo-arantza {
+    font-family: "LobsterTwo", serif;
+    font-size: 200px; /* Tamaño grande */
+    color: var(--blanco);
+    text-shadow: 3px 3px 7px var(--rojo); /* Sombra */
+    margin-bottom: 0; /* Sin espacio inferior */
+    margin-top: -20px; /* Reduce el espacio superior */
+    position: relative;
+    display: block; /* Cambia a bloque para extender el fondo */
+    text-align: center; /* Centra el texto */
+  }
+  
+
+  
+  .titulo-principal {
+    font-family: "Playlist-Script", serif;
+    font-size: 100px; /* Tamaño grande */
+    color: var(--blanco);
+    text-shadow: 3px 3px 7px var(--rojo); /* Sombra */
+    margin-bottom: -10px; /* Reduce la separación con "Arantza" */
+    font-weight: bold; /* Hace más gruesas las letras */
+    letter-spacing: 2px; /* Espaciado adicional entre letras para mayor presencia */
+  }
+  
+  button:hover {
+    background-color: var(--rosa-palo);
+    color: var(--marron-oscuro);
+  }
+  
+  /* Secciones generales */
+  .container {
+    padding: 20px;
+    margin: auto;
+    max-width: 1200px;
+    text-align: center;
+  }
+
+  /* Animación de deslizamiento desde abajo */
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(50px); /* Inicia más abajo */
+    opacity: 0; /* Totalmente transparente */
+  }
+  100% {
+    transform: translateY(0); /* Llega a su posición final */
+    opacity: 1; /* Totalmente visible */
+  }
+}
+
+/* Animación para el título principal */
+.titulo-principal {
+  font-family: "Playlist-Script", serif;
+  font-size: 100px;
+  color: var(--blanco);
+  text-shadow: 3px 3px 7px var(--rojo);
+  margin-bottom: -10px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  opacity: 0; /* Inicialmente oculto */
+  animation: slideInFromBottom 1s ease-out forwards; /* Animación */
+  animation-delay: 0.5s; /* Espera 0.2s para iniciar */
+}
+
+/* Animación para el título "Arantza" */
+.titulo-arantza {
+  font-family: "LobsterTwo", serif;
+  font-size: 200px;
+  color: var(--blanco);
+  text-shadow: 3px 3px 7px var(--rojo);
+  margin-bottom: 0;
+  margin-top: -20px;
+  position: relative;
+  display: block;
+  text-align: center;
+  opacity: 0; /* Inicialmente oculto */
+  animation: slideInFromBottom 1s ease-out forwards; /* Animación */
+  animation-delay: 1s; /* Espera 0.4s para iniciar */
+}
+
+  
+  
+  /* Responsividad */
+  @media screen and (max-width: 800px) {
+    body {
+      font-size: 90%;
+    }
+  
+    .container {
+      padding: 10px;
+    }
+    
+    h1{
+      font-size: 3.4em;
+      align-items: center;
+    }
+  
+    h2, h3 {
+      font-size: 1.5em;
+    }
+  
+    button {
+      font-size: 0.9em;
+      padding: 8px 12px;
+    }
+  
+    #inicio h2 {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+    }
+  
+    #inicio .temporizador {
+      font-size: 1.5rem;
+      margin-top: 10px;
+    }
+    .titulo-arantza {
+      font-size: 10rem; /* Tamaño para pantallas medianas */
+    }
+    .titulo-principal{
+      font-size: 5rem;
+      align-items: center;
+    }
+    
+  }
+  
+  @media screen and (max-width: 500px) {
+    body {
+      font-size: 85%;
+    }
+  
+    h2, h3 {
+      font-size: 1.5em;
+      align-items: center;
+    }
+  
+    
+    .titulo-principal{
+      font-size: 1rem;
+      align-items: center;
+    }
+  
+    button {
+      font-size: 0.8em;
+      padding: 6px 10px;
+    }
+    .titulo-arantza {
+      font-size: 6rem; /* Tamaño para pantallas pequeñas */
+    }
+    .titulo-principal{
+      font-size: 3rem;
+      align-items: center;
+    }
+  
+    #inicio h2 {
+      font-size: 1.6rem;
+    }
+  
+    #inicio .temporizador {
+      font-size: 1.2rem;
+    }
+  }
+  

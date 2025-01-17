@@ -1,0 +1,357 @@
+.trivia-container {
+    background-image: url(..//assets/fondotri.jpg);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Encabezado */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #333;
+    background: linear-gradient(45deg, #d4a5a5, #f5e3e3);
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  /* Pregunta */
+  .pregunta h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: white;
+    font-family: "Arial", sans-serif;
+  }
+  
+  /* Opciones */
+  .opciones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Espaciado uniforme entre las opciones */
+  }
+  
+  .opcion {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #fff; /* Fondo claro para opciones */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 80%; /* Ajusta el ancho para pantallas pequeñas */
+    max-width: 400px;
+    text-align: center;
+    font-family: "Arial", sans-serif;
+  }
+  
+  /* Hover y clic */
+  .opcion:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+  }
+  
+  /* Respuesta correcta */
+  .opcion.correcta {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+  }
+  
+  /* Respuesta incorrecta */
+  .opcion.incorrecta {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+  }
+  
+  /* Botón siguiente */
+  .boton-siguiente {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 50%; /* Ajusta el tamaño del botón */
+  }
+  
+  .boton-siguiente:hover {
+    background-color: #0056b3;
+  }
+  /* Resultado final */
+.resultado-final {
+  text-align: center;
+  background-image: url();
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.resultado-final h2 {
+  font-size: 2rem;
+  color: white;
+}
+
+.resultado-final p {
+  font-size: 1.2rem;
+  color: white;
+  margin: 10px 0;
+}
+
+.boton-reiniciar {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.boton-reiniciar:hover {
+  background-color: #0056b3;
+}
+
+
+  /* Animación para preguntas: deslizamiento y desvanecimiento */
+@keyframes fadeSlideIn {
+    0% {
+      opacity: 0;
+      transform: translateX(-50px); /* Desliza desde la izquierda */
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0); /* Llega a su posición */
+    }
+  }
+  
+  @keyframes fadeSlideOut {
+    0% {
+      opacity: 1;
+      transform: translateX(0); /* Posición actual */
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(50px); /* Se desliza hacia la derecha */
+    }
+  }
+  
+  .animacion-pregunta {
+    animation: fadeSlideIn 0.6s ease-out; /* Aplica la animación de entrada */
+  }
+  
+  /* Opciones (puedes personalizar más si lo necesitas) */
+  .opciones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  /* Estilo de cada botón */
+  .opcion {
+    padding: 15px 30px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #fff;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .opcion:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+  }
+  
+  .opcion.correcta {
+    background-color: #0bd33a;
+    border-color: #c3e6cb;
+    color: #dcdedb;
+  }
+  
+  .opcion.incorrecta {
+    background-color: #bf1a1a;
+    border-color: #f5c6cb;
+    color: #ae7e83;
+  }
+
+  /* Barra de progreso */
+.progreso {
+    width: 100%;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    margin-top: 20px;
+    overflow: hidden;
+    height: 10px;
+  }
+  
+  .progreso-interno {
+    height: 100%;
+    background-color: #007bff;
+    animation: progresoAnimacion 10s linear;
+  }
+
+  /* Animación para la vista final */
+@keyframes fadeZoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animacion-final {
+  animation: fadeZoomIn 0.8s ease-in-out;
+}
+
+/* Estilo del resultado final */
+.resultado-final {
+  text-align: center;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.resultado-final h2 {
+  font-size: 2rem;
+  color: #444;
+}
+
+.resultado-final p {
+  font-size: 1.2rem;
+  color: #555;
+  margin: 10px 0;
+}
+
+.boton-reiniciar {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.boton-reiniciar:hover {
+  background-color: #0056b3;
+}
+
+/* Animación de desvanecimiento */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animacion-vista {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Estilo de la vista principal */
+.vista-principal {
+  font-family: "DrukaatieBurti", serif;
+  text-align: center;
+  padding: 20px;
+  background-image: url();
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.vista-principal h1 {
+  font-family: "DrukaatieBurti", ;
+  font-size: 2rem;
+  color: white;
+}
+
+.vista-principal p {
+  font-size: 1.2rem;
+  color: white;
+  margin: 10px 0 20px;
+}
+
+.boton-iniciar {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.boton-iniciar:hover {
+  background-color: #0056b3;
+}
+
+.ranking {
+  margin-top: 20px;
+  background-image: url();
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.ranking h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.ranking ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.ranking li {
+  font-size: 1rem;
+  color: #555;
+  margin: 5px 0;
+}
+
+.ranking-lista {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  text-align: left;
+}
+
+.ranking-item {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+
+  
+  /* Animación de progreso */
+  @keyframes progresoAnimacion {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  

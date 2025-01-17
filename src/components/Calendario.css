@@ -1,0 +1,109 @@
+/* Calendario principal */
+.calendario {
+    font-family: "DrukaatieBurti", serif;
+    text-align: center;
+    padding: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+    background-image: url(..//assets/calendario.jpg);
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+  
+  /* Título y mes */
+  .titulo {
+    font-size: 2rem;
+    color: #e1e1e1;
+    text-shadow: 3px 3px 6px black;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .mes {
+    font-size: 1.8rem;
+    color: var(--rojo);
+    text-shadow: 3px 3px 8px black;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  /* Tabla */
+  table {
+    width: 100%;
+    max-width: 600px; /* Ajusta el ancho máximo */
+    border-collapse: collapse;
+    margin: 0 auto;
+    border: 3px solid #d4a017; /* Grosor y color del borde principal */
+  }
+  
+  th,
+  td {
+    width: 14.2%; /* 100% dividido entre 7 días */
+    font-weight: bold; /* Hace los números más gruesos */
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 18px;
+    color: wheat;
+    text-shadow: 3px 3px 9px black;
+    border: 2px solid #e0e0e0; /* Grosor de las líneas internas */
+  }
+  
+  /* Días de la semana */
+  th {
+    font-size: 16px;
+    color: wheat;
+    font-weight: normal;
+  }
+  
+  /* Día resaltado */
+  .resaltado {
+    font-family: "LobsterTwo", serif;
+    background: red;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 50%;
+  }
+  
+  @media screen and (max-width: 800px) {
+    .calendario{
+      max-width: 500px;
+      height: 600px;
+    }
+    .titulo {
+      font-size: 3rem;
+    }
+    
+    .mes {
+      font-size: 2.5rem;
+    }
+    
+    th,
+    td {
+      font-size: 2rem;
+    }
+    
+  }
+  
+  @media screen and (max-width: 500px) {
+    .calendario{
+      max-width: 600px;
+      height: 650px;
+    }
+    .titulo {
+      font-size: 2rem;
+    }
+    
+    .mes {
+      font-size: 2.5rem;
+    }
+    
+    th,
+    td {
+      font-size: 1.5rem;
+    }
+  }
+  

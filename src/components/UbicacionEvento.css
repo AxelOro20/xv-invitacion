@@ -1,0 +1,362 @@
+/* Contenedor principal */
+.ubicacion-modal-container {
+    background-image: url(../assets/carta.webp);
+    background-size: cover;
+    background-position: center;
+    color: var(--beige);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+    gap: 15px; /* Espaciado entre la imagen y los botones */
+}
+/* Contenedor del modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Contenido del modal */
+.modal-content {
+    background: linear-gradient(45deg, #1b1b1b, #2e2b2b);
+    color: var(--beige);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente todos los elementos */
+    gap: 15px; /* Espaciado entre elementos */
+}
+/* Tamaño de el mapa */
+.modal-mapa {
+    width: 400px; /* Fija el ancho del mapa */
+    height: 300px; /* Aumenta la altura */
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 15px;
+}
+
+
+/* Imagen del salón */
+.modal-imagen {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    object-fit: cover; /* Asegura que la imagen no se deforme */
+    margin-bottom: 15px; /* Espaciado inferior */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal-imagen:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+}
+
+/* Título del modal */
+.modal-titulo {
+    font-family: "Debby", serif;
+    font-size: 2rem;
+    color: var(--rojo);
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+}
+
+/* Información del evento */
+.modal-info {
+    font-family: "", serif;
+    font-size: 1.2rem;
+    color: var(--rosa-palo);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Botones dentro del modal */
+.modal-botones {
+    display: flex;
+    flex-direction: row; /* Alinea los botones en fila */
+    justify-content: center;
+    gap: 15px; /* Espaciado entre botones */
+    margin-top: 10px;
+    width: 100%;
+}
+
+
+.modal-boton {
+    display: flex; /* Alinea la imagen y el texto horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    gap: 10px; /* Espacio entre la imagen y el texto */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #f5f5f5; /* Color de fondo */
+    transition: transform 0.2s ease, background-color 0.2s ease;
+  }
+  
+  .modal-boton img {
+    width: 30px; /* Tamaño de la imagen */
+    height: 30px; /* Tamaño de la imagen */
+  }
+  
+  .modal-boton span {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Efectos al pasar el cursor */
+  .modal-boton:hover {
+    transform: scale(1.1); /* Crece ligeramente */
+    background-color: #eaeaea; /* Cambia el color de fondo */
+  }
+  
+
+/* Botón para cerrar */
+.modal-cerrar {
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    background: none;
+    border: none;
+    color: var(--beige);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    color: red;
+}
+
+.modal-cerrar:hover {
+    transform: scale(1.2);
+}
+
+/* Botón principal */
+.ubicacion-boton-principal {
+    display: flex; /* Alinea la imagen y el texto horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    gap: 10px; /* Espacio entre la imagen y el texto */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #f5f5f5; /* Color de fondo */
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+.ubicacion-boton-principal img {
+    width: 30px; /* Tamaño de la imagen */
+    height: 30px; /* Tamaño de la imagen */
+  }
+  
+  .ubicacion-boton-principal span {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
+
+.ubicacion-boton-principal:hover {
+    transform: scale(1.1); /* Crece ligeramente */
+    background-color: #eaeaea; /* Cambia el color de fondo */;
+}
+
+.ubicacion {
+    position: relative;
+    width: 60px; /* Ancho del ícono */
+    height: 80px; /* Altura del ícono */
+    border: 3px solid #d4a017; /* Contorno dorado */
+    border-radius: 50% 50% 100% 100%; /* Forma de gota */
+    box-sizing: border-box;
+    background: none;
+    margin: 0 auto; /* Centrado */
+  }
+
+  .titulo_evento{
+    font-size: 4rem;
+    font-family: 'DrukaatieBurti', serif;
+    font-weight: bold;
+    color: red;
+  }
+
+  .titulo_salon{
+    font-size: 3.5rem;
+    font-family: 'DrukaatieBurti', serif;
+    font-weight: bold;
+    color: red;
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  
+  .modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .modal-content {
+    background: linear-gradient(45deg, #1b1b1b, #2e2b2b);
+    color: var(--beige);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    animation: slideIn 1s ease; /* Animación del modal */
+  }
+  
+  @keyframes slideOut {
+    from {
+      transform: translateY(0); /* Comienza desde su posición actual */
+      opacity: 1; /* Totalmente visible */
+    }
+    to {
+      transform: translateY(-100%); /* Se desliza hacia arriba */
+      opacity: 0; /* Se desvanece */
+    }
+  }
+  
+  /* Animación de entrada */
+  @keyframes slideIn {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .modal-content {
+    background: linear-gradient(45deg, #1b1b1b, #2e2b2b);
+    color: var(--beige);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    animation: slideIn 1.5s ease; /* Por defecto, animación de entrada */
+  }
+  
+  /* Añade la clase para la animación de salida */
+  .modal-content.slide-out {
+    animation: slideOut 1s ease forwards; /* Forwards asegura que quede fuera al finalizar */
+  }
+  
+  
+
+  /* Responsividad */
+@media screen and (max-width: 800px) {
+    .titulo_evento{
+        font-size: 3.5rem;
+    }
+    .titulo_salon{
+      font-size: 3rem;
+    }
+    .modal-titulo {
+        font-size: 1.8rem;
+    }
+
+    .modal-info {
+        font-size: 1rem;
+    }
+
+    .modal-boton {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+
+    .modal-imagen {
+        max-width: 400px; /* Reduce el tamaño de la imagen */
+    }
+}
+
+@media screen and (max-width: 500px) {
+  .titulo_evento{
+    font-size: 2rem;
+  }
+  .titulo_salon{
+    font-size: 1.8rem;
+  }
+    .modal-titulo {
+        font-size: 2rem;
+    }
+
+    .modal-info {
+        font-size: 0.8rem;
+    }
+
+    .modal-boton {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+    }
+
+    .modal-imagen {
+        max-width: 300px; /* Reduce aún más el tamaño de la imagen */
+    }
+    .modal-mapa {
+        width: 300px; /* Fija el ancho del mapa */
+        height: 200px; /* Aumenta la altura */
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        margin-bottom: 15px;
+    }
+    .modal-cerrar{
+        top: 0;
+    }
+}

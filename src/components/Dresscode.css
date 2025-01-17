@@ -1,0 +1,187 @@
+/* Fondo animado */
+.dress-code-container {
+    background-image: url(..//assets/rosa.webp);
+    background-size: cover;
+    background-position: center;
+    color: var(--beige);
+    padding: 40px 20px;
+    min-height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Título */
+.dress-code-container h1 {
+    font-family: "Playlist-Script", serif;
+    font-size: 5rem;
+    color: var(--rojo);
+    margin-bottom: 0;
+    text-shadow: 2px 2px 6px white;
+}
+
+.Regla-container {
+    display: flex; /* Flexbox para alinear íconos y texto */
+    align-items: center; /* Alinea verticalmente los íconos con el texto */
+    justify-content: space-between; /* Asegura que los íconos estén en los extremos */
+    gap: 10px; /* Espacio entre los íconos y el texto */
+    text-align: center; /* Asegura que el texto esté centrado */
+  }
+
+.Regla{
+    font-family: "DrukaatieBurti", serif;
+    font-size: 2.5rem; /* Tamaño del texto */
+    line-height: 1.5; /* Ajusta el espaciado entre líneas */
+    word-wrap: break-word; /* Permite el salto de línea si el texto es largo */
+    flex-grow: 1; /* Hace que el texto ocupe el espacio sobrante */
+    margin: 0; /* Elimina márgenes del H2 */
+}
+
+.icono-container {
+    display: inline-flex; /* Asegura que los íconos sean tratados como inline */
+    align-items: center;
+  }
+  
+  .icono-advertencia {
+    width: 40px; /* Ajusta el tamaño del ícono */
+    height: 40px;
+    margin: 10px;
+  }
+  
+  .resaltado-rojo {
+    text-decoration: underline; /* Subraya la palabra */
+    color: red; /* Cambia el color a rojo */
+    font-weight: bold; /* Hace que se destaque más */
+    text-underline-offset: 2px; /* Ajusta la distancia del subrayado */
+  }
+ 
+  .resaltado-rojo:hover {
+    color: darkred;
+    text-decoration-color: crimson;
+  }
+
+/* Contenido principal */
+.dress-code-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+/* Animación al hacer scroll */
+.dress-code-content.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Elementos escalonados */
+.dress-code-content .image-container {
+    transition-delay: 0.2s;
+}
+
+.dress-code-content {
+    transition-delay: 0.4s;
+}
+
+/* Separadores decorativos */
+.section-separator {
+    font-size: 2rem;
+    color: var(--rosa-palo);
+    margin: 20px 0;
+}
+
+/* Imagen */
+.image-container {
+    width: 90%;
+    max-width: 400px;
+    margin: 20px auto;
+    border: 5px solid var(--rojo);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #2e2b2b, #1b1b1b);
+}
+
+.dress-code-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.dress-code-image:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
+
+/* Botón */
+.dress-code-button {
+    margin-top: 20px;
+    background-color: var(--rojo);
+    color: var(--beige);
+    font-family: "Cinzel Decorative", serif;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.dress-code-button:hover {
+    background-color: var(--rosa-palo);
+    transform: scale(1.1);
+}
+
+@keyframes growAndShrink {
+    0% {
+      transform: scale(1); /* Tamaño original */
+    }
+    50% {
+      transform: scale(1.2); /* Agrandar */
+    }
+    100% {
+      transform: scale(1); /* Regresar al tamaño original */
+    }
+  }
+  
+  .icono-advertencia {
+    animation: growAndShrink 1s ease-in-out infinite; /* Repetición infinita */
+  }
+  
+
+/* Responsividad */
+@media screen and (max-width: 800px) {
+    .dress-code-container h1 {
+        font-size: 4rem;
+    }
+    .Regla{
+        font-size: 2.5rem;
+    }
+}
+
+/* Animación para dispositivos pequeños */
+@media screen and (max-width: 500px) {
+    .dress-code-container h1 {
+        font-size: 2rem;
+    }
+    .Regla{
+        font-size: 1.3rem;
+    }
+    .icono-advertencia{
+        width: 25px; /* Ajusta el tamaño del ícono */
+    height: 25px;
+        
+    }
+    .section-separator {
+        font-size: 1.5rem;
+    }
+}
