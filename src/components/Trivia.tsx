@@ -12,44 +12,44 @@ interface Pregunta {
 const preguntasOriginales = [
     {
       id: 1,
-      pregunta: "¿Cuantos meses tenia mi mamá de embarazada, cuando supo que venia en camino?",
+      pregunta: "¿Cuántos meses tenía mi mamá de embarazada, cuando supo que venía en camino?",
       opciones: ["2 meses", "5 meses", "Soy Adoptada", "ninguna de la anteriores"],
       correcta: 1, // Índice de la respuesta correcta (0-based)
     },
     {
       id: 2,
-      pregunta: "¿Cual es mi serie favorita de ciencia ficción?",
+      pregunta: "¿Cuál es mi serie favorita de ciencia ficción?",
       opciones: ["Alice in Borderland", "Arcane", "The Umbrella Academy", "Stranger things"],
       correcta: 0,
     },
      {
       id: 3,
-      pregunta: "¿Cuantos hermanos tengo?",
+      pregunta: "¿Cuántos hermanos tengo?",
       opciones: ["3", "6", "2", "1"],
       correcta: 2,
     },
     {
      id: 4,
-     pregunta: "¿Cual es mi hobbie?",
+     pregunta: "¿Cuál es mi hobbie?",
      opciones: ["Cantar", "Dibujar", "Comer", "Leer"],
      correcta: 1,
      },
     {
      id: 5,
-     pregunta: "¿Cuantas mascotas tengo?",
+     pregunta: "¿Cuántas mascotas tengo?",
      opciones: ["2", "10", "5", "7"],
      correcta: 3,
     },
     {
      id: 6,
-     pregunta: "¿Qué es lo que me gustaba hacer de pequeña!?",
+     pregunta: "¿Qué es lo que me gustaba hacer de pequeña?",
      opciones: ["Jugar a las Muñecas", "Platicar", "Jugar futbol", "Bañarme"],
      correcta: 1,
     },
     {
      id: 7,
-     pregunta: "¿Si ganase un premio Nobel, ¿cuál sería??",
-     opciones: ["El premio a la paciencia", "El premio a la mas enojona", "El premio a la mas creativa", "El premio a la puntualidad"],
+     pregunta: "Si ganase un premio Nobel, ¿cuál sería?",
+     opciones: ["El premio a la paciencia", "El premio a la más enojona", "El premio a la más creativa", "El premio a la puntualidad"],
      correcta: 1,
     },
     {
@@ -60,7 +60,7 @@ const preguntasOriginales = [
     },
     {
      id: 9,
-     pregunta: "¿Que siempre me hace sonreír?",
+     pregunta: "¿Qué siempre me hace sonreír?",
      opciones: ["Mis amigos", "Jugar Voleiball", "Cantar", "Caminar"],
      correcta: 0,
      },
@@ -78,8 +78,8 @@ const preguntasOriginales = [
     },
     {
      id: 12,
-     pregunta: "¿De que color son mis ojos?",
-     opciones: ["Azul ", "Cafe claro", "Verde", "Celestes"],
+     pregunta: "¿De qué color son mis ojos?",
+     opciones: ["Azul ", "Café claro", "Verde", "Celestes"],
      correcta: 1,
     },
     {

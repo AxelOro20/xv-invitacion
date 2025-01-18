@@ -110,11 +110,6 @@ footer {
     font-size: 1.8rem;
     margin-bottom: 12px;
   }
-
-  #inicio .temporizador {
-    font-size: 1.5rem;
-    margin-top: 10px;
-  }
   .titulo-arantza {
     font-size: 10rem; /* Tamaño para pantallas medianas */
   }
@@ -130,12 +125,6 @@ footer {
     font-size: 85%;
   }
 
-  h2, h3 {
-    font-size: 1.5em;
-    align-items: center;
-  }
-
-  
   .titulo-principal{
     font-size: 1rem;
     align-items: center;

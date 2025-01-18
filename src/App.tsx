@@ -1,4 +1,3 @@
-//import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import BotonMusica from "./components/BotonMusica";
 import Inicio from "./components/Inicio";

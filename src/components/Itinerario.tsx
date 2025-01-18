@@ -5,14 +5,14 @@ import "./Itinerario.css";
 
 function Itinerario() {
   const actividades = [
-    { hora: "4:30 PM", actividad: "Recepción", icono: "🌟" },
+    { hora: "4:30 PM", actividad: "Recepción en el Salon ", icono: "🌟" },
     { hora: "5:00 PM", actividad: "Ceremonia Religiosa", icono: "⛪" },
-    { hora: "5:30 PM", actividad: "Recepción en el Salón Salamandra", icono: "🎉" },
+    { hora: "5:30 PM", actividad: "Apertura del Evento", icono: "🎉" },
     { hora: "6:00 PM", actividad: "Cocktail de bienvenida", icono: "🍸" },
     { hora: "7:00 PM", actividad: "Cena formal", icono: "🍽️" },
     { hora: "8:00 PM", actividad: "VALS", icono: "💃" },
     { hora: "9:30 PM", actividad: "Baile y Bantucada", icono: "🕺" },
-    { hora: "12:00 AM", actividad: "Final", icono: "🎆" },
+    { hora: "12:00 AM", actividad: "Termino del Evento", icono: "🎆" },
   ];
 
   // Inicialización de AOS

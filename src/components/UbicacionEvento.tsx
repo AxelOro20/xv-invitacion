@@ -20,13 +20,13 @@ const UbicacionEventoModal = () => {
     setTimeout(() => {
       setIsClosing(false); // Resetea el estado de cierre
       setIsOpen(false); // Cierra el modal completamente
-    }, 1500); // Tiempo igual a la duración de la animación (1.5s)
+    }, 1000); // Tiempo igual a la duración de la animación (1s)
   };
 
   return (
     <div className="ubicacion-modal-container">
       <h2 className="titulo_evento">Lugar y Ubicación</h2>
-      <h3 className="titulo_salon">Salon Salamandra</h3>
+      <h2 className="titulo_salon">Salón Salamandra</h2>
       <img src={SalonImage} alt="Salón del evento" className="ubicacion-imagen" />
       <button className="ubicacion-boton-principal" onClick={handleOpen}>
         <img src={Ubi} alt="Ver mapa" />
@@ -38,7 +38,8 @@ const UbicacionEventoModal = () => {
           <div
             className={`modal-content ${isClosing ? "slide-out" : ""}`} // Cambia entre animaciones
           >
-            <h2 className="modal-titulo">Ubicación del Evento</h2>
+            <h2 className="modal-titulo">Ubicación del Evento y Ceremonia</h2>
+            <p className="modal-aclaracion">La ceremonia y el evento se llevara acabo en el mismo lugar</p>
             <p className="modal-info">
               <strong>Fecha:</strong> Domingo, 16 de marzo de 2025, 4:30 PM
             </p>

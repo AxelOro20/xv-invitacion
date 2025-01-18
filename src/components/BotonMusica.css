@@ -30,14 +30,21 @@
   
   @media screen and (max-width: 800px) {
     .boton-musica {
-        bottom: 500px;
+        bottom: 600px;
         }
+    .icono-musica{
+      width: 35px;
+      height: 35px;
+    }
     
   }
   
   @media screen and (max-width: 500px) {
     .boton-musica {
-      bottom: 700px;
+      bottom: 600px;
+      }
+    .icono-musica{
+        width: 25px;
+        height: 25px;
       }
   }
-  

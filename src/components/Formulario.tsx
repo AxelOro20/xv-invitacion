@@ -62,8 +62,7 @@ function Formulario() {
   return (
     <div className="formulario-container">
       <h1 className="Title">Confirmación de Asistencia</h1>
-      <h2 className="mensaje-contacto">Espero que puedas venir compartir conmigo este día inolvidable.</h2>
-      <h3 className="favor">Favor de confirmar tu presencia.</h3>
+      <h2 className="mensaje-contacto">Me encantaría contar con tu presencia en este día especial, por favor confirma tu asistencia a la brevedad</h2>
       <h2 className="mensaje-contacto">¡Muchas Gracias!</h2>
       <form onSubmit={handleSubmit} className="formulario-form">
         <div className="formulario-campo">
@@ -126,7 +125,7 @@ function Formulario() {
       <p className="mensaje-contacto">También puedes confirmar vía WhatsApp.</p>
       <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="boton-whatsapp">
         <img src={WhatsAppIcon} alt="WhatsApp" className="icono-whatsapp" />
-        Confirmar a Dino
+        Confirmar con Dinorah 
       </a>
     </section>
     </div>
