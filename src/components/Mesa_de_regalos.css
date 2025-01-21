@@ -13,7 +13,7 @@
   text-shadow: 3px 3px 9px black;
   text-align: center;
   font-family: "DrukaatieBurti", serif;
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin-bottom: 10px;
 }
 
@@ -66,8 +66,8 @@
   padding: 6px 12px;
   background-color: #f5f5f5; 
 }
-.logo_banamex{ 
-  width: 200px;
+.logo_azteca{ 
+  width: 130px;
 }
 p{
   color: white;

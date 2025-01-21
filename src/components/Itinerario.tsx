@@ -11,7 +11,7 @@ function Itinerario() {
     { hora: "6:00 PM", actividad: "Cocktail de bienvenida", icono: "🍸" },
     { hora: "7:00 PM", actividad: "Cena formal", icono: "🍽️" },
     { hora: "8:00 PM", actividad: "VALS", icono: "💃" },
-    { hora: "9:30 PM", actividad: "Baile y Bantucada", icono: "🕺" },
+    { hora: "9:30 PM", actividad: "Baile y Batucada", icono: "🕺" },
     { hora: "12:00 AM", actividad: "Termino del Evento", icono: "🎆" },
   ];
 

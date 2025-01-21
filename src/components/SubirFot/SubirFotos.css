@@ -271,8 +271,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 9999; /* Incrementar si es necesario */
 }
+
 
 .modal-content {
   background: var(--gris-oscuro);
@@ -369,8 +370,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 9999;
+  visibility: visible; /* Asegúrate de que esté visible */
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
+
 
 .lightbox img {
   max-width: 90%;

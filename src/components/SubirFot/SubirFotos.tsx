@@ -24,7 +24,10 @@ function SubirFotos() {
   const [previews, setPreviews] = useState<string[]>([]);
   const [fotos, setFotos] = useState<Foto[]>([]);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [selectedFotoIndex, setSelectedFotoIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    fetchFotos();
+  }, []);
 
   const fetchFotos = async () => {
     try {
@@ -36,12 +39,9 @@ function SubirFotos() {
       setFotos(data);
     } catch (error) {
       console.error("Error al obtener las fotos: ", error);
+      toast.error("Hubo un problema al cargar las fotos.");
     }
   };
-
-  useEffect(() => {
-    fetchFotos();
-  }, []);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFiles = Array.from(e.target.files || []);
@@ -53,8 +53,16 @@ function SubirFotos() {
       toast.error("Algunas imágenes exceden el tamaño máximo de 5 MB.");
     }
 
-    const newPreviews = validFiles.map((file) => URL.createObjectURL(file));
-    setFiles((prev) => [...prev, ...validFiles]);
+    const newFiles = validFiles.filter(
+      (file) => !files.some((f) => f.name === file.name)
+    );
+
+    if (newFiles.length !== validFiles.length) {
+      toast.warning("Se excluyeron archivos duplicados.");
+    }
+
+    const newPreviews = newFiles.map((file) => URL.createObjectURL(file));
+    setFiles((prev) => [...prev, ...newFiles]);
     setPreviews((prev) => [...prev, ...newPreviews]);
   };
 
@@ -90,6 +98,7 @@ function SubirFotos() {
       }
       toast.success("Fotos subidas con éxito.");
       setFiles([]);
+      previews.forEach((preview) => URL.revokeObjectURL(preview));
       setPreviews([]);
       setIsModalOpen(false);
     } catch (error) {
@@ -113,69 +122,27 @@ function SubirFotos() {
     }
   };
 
-  const openLightbox = (index: number) => {
-    setSelectedFotoIndex(index);
-  };
-
-  const closeLightbox = () => {
-    setSelectedFotoIndex(null);
-  };
-
-  const goToNextFoto = () => {
-    setSelectedFotoIndex((prevIndex) =>
-      prevIndex !== null && prevIndex < fotos.length - 1 ? prevIndex + 1 : 0
-    );
-  };
-
-  const goToPrevFoto = () => {
-    setSelectedFotoIndex((prevIndex) =>
-      prevIndex !== null && prevIndex > 0 ? prevIndex - 1 : fotos.length - 1
-    );
-  };
-
-  const downloadFoto = () => {
-    if (selectedFotoIndex !== null) {
-      const foto = fotos[selectedFotoIndex];
-      const link = document.createElement("a");
-      link.href = foto.url;
-      link.download = foto.nombreArchivo;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }
-  };
-
-  const shareFoto = async () => {
-    if (selectedFotoIndex !== null) {
-      const foto = fotos[selectedFotoIndex];
-      if (navigator.share) {
-        try {
-          await navigator.share({
-            title: "Mira esta foto",
-            text: "Compartiendo esta foto desde mi galería.",
-            url: foto.url,
-          });
-        } catch (error) {
-          console.error("Error al compartir la foto:", error);
-          toast.error("No se pudo compartir la foto.");
-        }
-      } else {
-        toast.info("Tu navegador no soporta la funcionalidad de compartir.");
-      }
-    }
-  };
-
   return (
     <div className="container-subir-fotos">
       <ToastContainer />
-      <button className="open-modal-button" onClick={() => setIsModalOpen(true)}>
+      <button
+        className="open-modal-button"
+        onClick={() => setIsModalOpen(true)}
+        aria-label="Abrir modal para subir fotos"
+      >
         Subir Fotos
       </button>
 
       {isModalOpen && (
         <div className="modal-overlay">
           <div className="modal-content">
-            <button className="close-modal" onClick={() => setIsModalOpen(false)}>X</button>
+            <button
+              className="close-modal"
+              onClick={() => setIsModalOpen(false)}
+              aria-label="Cerrar modal"
+            >
+              X
+            </button>
             <div className="cargarfoto">
               <label htmlFor="file-upload" className="custom-upload-label">
                 <span>📤 Elegir Archivos</span>
@@ -198,7 +165,14 @@ function SubirFotos() {
                   <img src={preview} alt={`Vista previa ${index + 1}`} />
                   <button
                     className="delete-preview"
-                    onClick={() => setFiles((prev) => prev.filter((_, i) => i !== index))}
+                    onClick={() => {
+                      setFiles((prev) => prev.filter((_, i) => i !== index));
+                      setPreviews((prev) => {
+                        URL.revokeObjectURL(prev[index]);
+                        return prev.filter((_, i) => i !== index);
+                      });
+                    }}
+                    aria-label="Eliminar vista previa"
                   >
                     X
                   </button>
@@ -211,35 +185,20 @@ function SubirFotos() {
 
       <h2 className="titulo-galeria">Galería de Fotos</h2>
       <div className="container-img">
-        {fotos.map((foto, index) => (
+        {fotos.map((foto) => (
           <div key={foto.id} className="box-img">
             <figure>
-              <img
-                src={foto.url}
-                alt={foto.nombreArchivo}
-                onClick={() => openLightbox(index)}
-              />
+              <img src={foto.url} alt={foto.nombreArchivo} />
             </figure>
-            <button onClick={() => handleDelete(foto)}>X</button>
+            <button
+              onClick={() => handleDelete(foto)}
+              aria-label="Eliminar foto"
+            >
+              X
+            </button>
           </div>
         ))}
       </div>
-
-      {selectedFotoIndex !== null && (
-        <div className="lightbox">
-          <button className="prev" onClick={goToPrevFoto}>{"<"}</button>
-          <img
-            src={fotos[selectedFotoIndex].url}
-            alt={fotos[selectedFotoIndex].nombreArchivo}
-          />
-          <div className="actions">
-            <button className="download" onClick={downloadFoto}>Descargar</button>
-            <button className="share" onClick={shareFoto}>Compartir</button>
-          </div>
-          <button className="next" onClick={goToNextFoto}>{">"}</button>
-          <button className="close" onClick={closeLightbox}>X</button>
-        </div>
-      )}
     </div>
   );
 }

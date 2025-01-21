@@ -1,6 +1,6 @@
 import "./Mesa_de_regalos.css";
 import Amazon from "../assets/amazon.webp"; 
-import Banamex from "../assets/Citibanamex-logo.webp"; 
+import Azteca from "../assets/Banco-Azteca_logo.webp"; 
 
 const Amazon_link = "https://www.amazon.com.mx/hz/wishlist/ls/2MMUONS02620I?ref_=wl_share";
 const MesaDeRegalos = () => {
@@ -22,10 +22,10 @@ const MesaDeRegalos = () => {
               </button>
         </div>
         <div className="Sugerencia">
-          <img src={Banamex} alt="Banamex" className="logo_banamex" />
-          <p>Dinorah Judith Cardenas Veloz</p>
-          <p>Clabe 002180900062462565</p>
-          <p>tarjeta 5256-7800-9491-1796</p>
+          <img src={Azteca} alt="Banco Azteca" className="logo_azteca" />
+          <p>Arantza Ruiz Cardenas</p>
+          <p>Clabe 127180001795927753</p>
+          <p>Num. tarjeta 5534670206638722</p>
         </div>
       </div>
     </section>

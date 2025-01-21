@@ -1,3 +1,4 @@
+import { useState, useCallback } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import BotonMusica from "./components/BotonMusica";
 import Inicio from "./components/Inicio";
@@ -9,8 +10,11 @@ import DressCode from "./components/Dresscode";
 import Itinerario from "./components/Itinerario";
 import MesaDeRegalos from "./components/Mesa_de_regalos";
 import Formulario from "./components/Formulario";
-import SubirFotos from "./components/SubirFotos/SubirFotos";
+import Galeria_amigos from "./components/Galeria_amigos";
+import Galeria_arantza from "./components/Galeria_Arantza"
+import SubirFotos from "./components/SubirFotos";
 import Trivia from "./components/Trivia";
+// import SubirFotos from "./components/SubirFot/SubirFotos";
 import Agendar from "./components/Agendar";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -19,6 +23,12 @@ import "./App.css"
 
 
 function App() {
+  const [triggerRefresh, setTriggerRefresh] = useState(0);
+
+  const handleRefresh = useCallback(() => {
+    setTriggerRefresh((prev) => prev + 1);
+  }, []);
+
   return (
     <Router>
       <div>
@@ -59,9 +69,9 @@ function App() {
           <section id="confirmacion" style={{ padding: "60px 20px" }}>
             <Formulario />
           </section>
-          <section id="subir-fotos" style={{ padding: "60px 20px" }}>
-            <SubirFotos />
-          </section>
+          <Galeria_arantza/>
+          <Galeria_amigos triggerRefresh={triggerRefresh} />
+          <SubirFotos setTriggerRefresh={handleRefresh} />
           <section id="Trivia" style={{ padding: "60px 20px" }}>
             <Trivia/>
           </section>
