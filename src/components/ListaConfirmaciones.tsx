@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase";
+import "./ListaConfirmaciones.css";
 
-// Define el tipo de los datos de confirmación
 interface Confirmacion {
   id: string;
   nombre: string;
   acompaniantes: number;
+  asistira: string;
+  mensaje: string;
   fecha: string;
 }
 
@@ -20,8 +22,8 @@ function ListaConfirmaciones() {
       const data = querySnapshot.docs.map((doc) => {
         const data = doc.data() as Confirmacion;
         return {
-          ...data, // Copia todas las propiedades de los datos del documento
-          id: doc.id, // Añade la propiedad id desde el documento Firestore
+          ...data,
+          id: doc.id,
         };
       });
       setConfirmaciones(data);
@@ -38,28 +40,48 @@ function ListaConfirmaciones() {
   });
 
   return (
-    <div>
-      <h1>Lista de Confirmaciones</h1>
-      <button onClick={() => setOrden("nombre")}>Ordenar por Nombre</button>
-      <button onClick={() => setOrden("fecha")}>Ordenar por Fecha</button>
-      <table>
-        <thead>
-          <tr>
-            <th>Nombre</th>
-            <th>Acompañantes</th>
-            <th>Fecha</th>
-          </tr>
-        </thead>
-        <tbody>
-          {confirmacionesOrdenadas.map((conf) => (
-            <tr key={conf.id}>
-              <td>{conf.nombre}</td>
-              <td>{conf.acompaniantes}</td>
-              <td>{new Date(conf.fecha).toLocaleString()}</td>
+    <div className="lista-confirmaciones-container">
+      <h1 className="titulo">Lista de Confirmaciones</h1>
+      <div className="orden-buttons">
+        <button
+          onClick={() => setOrden("nombre")}
+          className={orden === "nombre" ? "active" : ""}
+        >
+          Ordenar por Nombre
+        </button>
+        <button
+          onClick={() => setOrden("fecha")}
+          className={orden === "fecha" ? "active" : ""}
+        >
+          Ordenar por Fecha
+        </button>
+      </div>
+      <div className="tabla-wrapper">
+        <table className="confirmaciones-table">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Num. Acom</th>
+              <th>Asistirá</th>
+              <th>Mensaje</th>
+              <th>Fecha</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {confirmacionesOrdenadas.map((conf) => (
+              <tr key={conf.id}>
+                <td>{conf.nombre}</td>
+                <td>{conf.acompaniantes}</td>
+                <td>{conf.asistira}</td>
+                <td className="mensaje-columna">
+                  <span>{conf.mensaje || "N/A"}</span>
+                </td>
+                <td>{new Date(conf.fecha).toLocaleString()}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

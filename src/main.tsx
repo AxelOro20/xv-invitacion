@@ -1,14 +1,3 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
-
-// createRoot(document.getElementById('root')!).render(
-//   <StrictMode>
-//     <App />
-//   </StrictMode>,
-// )
-// Registrar el Service Worker para la funcionalidad PWA
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker
@@ -21,9 +10,3 @@ if ("serviceWorker" in navigator) {
       });
   });
 }
-
-createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>
-);

@@ -8,7 +8,7 @@ const MesaDeRegalos = () => {
     <section className="mesa-de-regalos">
       <h2 className="titulo">Mesa de regalos</h2>
       <p className="mensaje">
-        Tu compañía es el mayor regalo para nosotros, Pero si necesitas una idea, aquí tienes algunas sugerencias.
+        Tu compañía es el mayor regalo para nosotros, pero si necesitas una idea, aquí tienes algunas sugerencias.
       </p>
       <div className="opciones-regalos">
         <div className="Sugerencia">

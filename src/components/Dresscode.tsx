@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import DressCodeImage from "../assets/DreesCodee.webp";
+import DressCodeImage from "../assets/DressCode.webp";
 import "./Dresscode.css";
 import Advertencia from "../assets/advertencia.webp";
 
@@ -46,7 +46,7 @@ const DressCode = () => {
             <div className="Regla-container">
                 <img src={Advertencia} alt="Advertencia" className="icono-advertencia" />
                 <h2 className="Regla">
-                    ¡El color <span className="resaltado-rojo">Rojo</span> está reservado para la quinceañera!
+                    ¡El color <span className="resaltado-rojo">Rojo</span> está RESERVADO para la quinceañera!
                 </h2>
                 <img src={Advertencia} alt="Advertencia" className="icono-advertencia" />
             </div>

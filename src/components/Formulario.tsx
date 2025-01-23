@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
-import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify"; // Importamos React-Toastify
 import "react-toastify/dist/ReactToastify.css"; // Importamos los estilos
 import { db } from "../firebase";
@@ -14,8 +13,6 @@ function Formulario() {
   const [mensaje, setMensaje] = useState("");
   const [error, setError] = useState("");
   const whatsappLink = "https://wa.me/+525510198619"; // Reemplaza con tu número de WhatsApp y mensaje
-
-  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -51,7 +48,6 @@ function Formulario() {
         fecha: new Date().toISOString(),
       });
       toast.success("¡Confirmación enviada exitosamente!");
-      setTimeout(() => navigate("/confirmacion"), 2000);
     } catch (error) {
       console.error("Error al confirmar asistencia: ", error);
       toast.error("Hubo un error al enviar tu confirmación.");

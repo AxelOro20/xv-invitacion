@@ -6,10 +6,10 @@ import { toast } from "react-toastify";
 import "./SubirFotos.css";
 
 interface Props {
-  setTriggerRefresh: () => void;
+  setTriggerRefresh: (value: (prev: number) => number) => void; // Acepta un callback para actualizar el estado
 }
 
-const SubirFotos = ({ setTriggerRefresh }: Props) => {
+const SubirFotos: React.FC<Props> = ({ setTriggerRefresh }) => {
   const [files, setFiles] = useState<File[]>([]);
   const [previews, setPreviews] = useState<string[]>([]);
 
@@ -39,15 +39,17 @@ const SubirFotos = ({ setTriggerRefresh }: Props) => {
         const storageRef = ref(storage, `fotos/${uniqueName}`);
         await uploadBytes(storageRef, file);
 
+        // Agregar el nombre del archivo a Firestore
         await addDoc(collection(db, "fotos"), {
           nombreArchivo: uniqueName,
           fecha: new Date().toISOString(),
         });
       }
+
       toast.success("Fotos subidas con éxito.");
       setFiles([]);
       setPreviews([]);
-      setTriggerRefresh(); // Notifica a la galería
+      setTriggerRefresh((prev) => prev + 1); // Incrementa el estado de la galería para refrescarla
     } catch (error) {
       console.error("Error al subir las fotos:", error);
       toast.error("Hubo un problema al subir las fotos.");
