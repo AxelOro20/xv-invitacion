@@ -13,9 +13,6 @@ h4, h2, small {
   .carousel {
     margin: 0px;
   }
-  .carrusel-list {
-    justify-content: center;
-  }
 }
 
 .carousel h2 {

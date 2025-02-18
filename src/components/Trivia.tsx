@@ -55,7 +55,7 @@ const preguntasOriginales = [
     {
      id: 8,
      pregunta: "¿Cuál es mi dulce favorito?",
-     opciones: ["Putsi pop", "Chupa Pop", "Aciduladito con Chile", "Pulparindo"],
+     opciones: ["Tutsi pop", "Chupa Pop", "Aciduladito con Chile", "Pulparindo"],
      correcta: 2,
     },
     {

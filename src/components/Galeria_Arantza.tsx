@@ -1,16 +1,24 @@
 import React, { useRef } from "react";
 import "./Galeria_Arantza.css";
 import babyArantza from "../assets/Baby_arantza.jpg";
-import babyArantza2 from "../assets/Baby_arantza2.jpg";
-import babyArantza3 from "../assets/Baby_arantza3.jpg";
+import babyArantza2 from "../assets/Baby_arantza4.jpg";
+import babyArantza3 from "../assets/Baby_arantza2.jpg";
+import babyArantza4 from "../assets/Baby_arantza3.jpg";
+import babyArantza5 from "../assets/Baby_arantza5.jpg";
+import babyArantza6 from "../assets/Baby_arantza6.jpg";
+import babyArantza7 from "../assets/Baby_arantza7.jpg";
 
 const Carousel: React.FC = () => {
   const trackRef = useRef<HTMLDivElement | null>(null);
 
   const images = [
     { src: babyArantza, description: "3 años" },
-    { src: babyArantza2, description: "5 años" },
+    { src: babyArantza2, description: "4 años" },
+    { src: babyArantza4, description: "5 años" },
     { src: babyArantza3, description: "6 años" },
+    { src: babyArantza5, description: "7 años" },
+    { src: babyArantza6, description: "8 años" },
+    { src: babyArantza7, description: "9 años" },
   ];
 
   const handlePrev = () => {
