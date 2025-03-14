@@ -1,0 +1,31 @@
+/* Contenedor que envuelve la foto */
+.foto-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0; /* Añade un margen si es necesario */
+}
+
+/* Estilo de la foto, hace que sea responsiva */
+.foto-quinceanera {
+  width: 100%; /* Esto hace que la imagen ocupe el 100% del ancho disponible */
+  max-width: 1000px; /* Máximo ancho en pantallas grandes */
+  height: auto; /* La altura se ajusta proporcionalmente */
+  border-radius: 10px; /* Si deseas bordes redondeados */
+  object-fit: cover; /* Hace que la imagen cubra el contenedor sin distorsionarse */
+}
+
+/* Media queries para hacerlo responsivo */
+@media screen and (max-width: 768px) {
+  .foto-quinceanera {
+    width: 100%; /* Se adapta al 100% en pantallas más pequeñas */
+    max-width: 100%; /* Asegura que no exceda el ancho de la pantalla */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .foto-quinceanera {
+    width: 100%; /* También se adapta al 100% del ancho en móviles */
+    max-width: 100%;
+  }
+}

@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import BotonMusica from "./components/BotonMusica";
 import Inicio from "./components/Inicio";
+import Fotosxv from "./components/fotosxv";
 import Presentacion from "./components/Presentacion";
 import Calendario from "./components/Calendario";
 import UbicacionEvento from "./components/UbicacionEvento";
@@ -44,6 +45,9 @@ function App() {
               <>
                 <BotonMusica />
                 <Inicio />
+                <section>
+                  <Fotosxv />
+                </section>
                 <section id="Presentacion">
                   <Presentacion />
                 </section>
